@@ -2,8 +2,8 @@
 
 candidate:
   full_name: "Брычка Кирилл Максимович"
-  email: "bryckakirill@gmail.com"
-  phone: "+7 (993) 1006968"
+  email: "${CANDIDATE_EMAIL}"
+  phone: "${CANDIDATE_PHONE}"
   location: "Саратов, Россия"
   github: "github.com/Angabebr"
   linkedin: ""          # заполнить если есть
