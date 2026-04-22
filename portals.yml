@@ -1,0 +1,265 @@
+# portals.yml — Конфигурация сканера для Кирилла Брычки
+# QA Engineer / Тестировщик — Россия + удалёнка
+
+# -- Фильтр по заголовку --
+# Хотя бы 1 из positive должен совпасть, 0 из negative.
+
+title_filter:
+  positive:
+    # QA / тестирование
+    - "QA"
+    - "Тестировщик"
+    - "Тестировщик ПО"
+    - "Quality Assurance"
+    - "Quality Engineer"
+    - "Test Engineer"
+    - "SDET"
+    - "Software Tester"
+    - "QA Engineer"
+    - "QA Инженер"
+    - "Manual QA"
+    - "Ручной тестировщик"
+    - "Automation QA"
+    - "QA Automation"
+    - "Стажёр QA"
+    - "Trainee QA"
+    - "Junior QA"
+    - "Junior тестировщик"
+  negative:
+    # Роли не по профилю
+    - "Senior"
+    - "Lead"
+    - "Head"
+    - "Principal"
+    - "Director"
+    - "Manager"
+    - "Architect"
+    - "DevOps"
+    - "Data Scientist"
+    - "Machine Learning"
+    - "Designer"
+    - "1C"
+    - "1С"
+    - "SAP"
+    - "Mainframe"
+    - "COBOL"
+    - "iOS"
+    - "Android"
+    - "Mobile"
+    - "Embedded"
+    - "Hardware"
+    - "Gamedev"            # убрать если интересен геймдев
+  seniority_boost:
+    - "Junior"
+    - "Junior+"
+    - "Middle"             # stretch цель
+    - "Стажёр"
+    - "Trainee"
+
+# -- Поисковые запросы --
+# Для WebSearch. Каждый запрос — отдельный скан.
+
+search_queries:
+  # --- hh.ru (основной российский job board) ---
+  - name: hh.ru — QA Junior / Тестировщик
+    query: 'site:hh.ru "тестировщик" OR "QA engineer" junior Саратов OR удалённо'
+    enabled: true
+
+  - name: hh.ru — Тестировщик удалёнка
+    query: 'site:hh.ru "тестировщик" OR "QA" удалённо OR "удалённая работа" junior OR стажёр'
+    enabled: true
+
+  - name: hh.ru — Manual QA удалёнка
+    query: 'site:hh.ru "ручное тестирование" OR "manual QA" OR "manual testing" junior удалённо'
+    enabled: true
+
+  - name: hh.ru — API тестирование Junior
+    query: 'site:hh.ru "тестирование API" OR "QA" Postman junior OR начинающий удалённо'
+    enabled: true
+
+  # --- Habr Career (tech-focused) ---
+  - name: Habr Career — QA Junior
+    query: 'site:career.habr.com "тестировщик" OR "QA" junior OR "junior+"'
+    enabled: true
+
+  - name: Habr Career — QA удалёнка
+    query: 'site:career.habr.com "QA engineer" OR "тестировщик" удалённо'
+    enabled: true
+
+  # --- GeekJob ---
+  - name: GeekJob — QA Junior
+    query: 'site:geekjob.ru "тестировщик" OR "QA" junior OR стажёр'
+    enabled: true
+
+  # --- SuperJob ---
+  - name: SuperJob — Тестировщик
+    query: 'site:superjob.ru "тестировщик" OR "QA engineer" junior Саратов OR удалённо'
+    enabled: true
+
+  # --- Rabota.ru ---
+  - name: Rabota.ru — QA Саратов
+    query: 'site:rabota.ru "тестировщик" OR "QA" Саратов'
+    enabled: true
+
+  # --- Telegram-каналы и агрегаторы ---
+  - name: Remote OK — QA Russian-friendly
+    query: 'site:remoteok.com "QA" OR "tester" OR "quality assurance" junior'
+    enabled: true
+
+  - name: Himalayas — QA Junior Remote
+    query: 'site:himalayas.app "QA engineer" OR "software tester" junior remote'
+    enabled: true
+
+# -- Компании напрямую --
+# Крупнейшие работодатели QA в России с прямыми карьерными страницами.
+
+tracked_companies:
+
+  # --- Крупные IT-компании РФ ---
+
+  - name: Яндекс
+    careers_url: https://yandex.ru/jobs
+    scan_method: websearch
+    scan_query: 'site:yandex.ru/jobs "тестировщик" OR "QA" junior OR стажёр'
+    notes: "Крупнейший российский IT. Много QA вакансий, включая стажировки."
+    enabled: true
+
+  - name: VK (ВКонтакте)
+    careers_url: https://team.vk.company/vacancy
+    scan_method: websearch
+    scan_query: 'site:team.vk.company "тестировщик" OR "QA" junior'
+    notes: "VK Group — соцсети, облако, игры. Регулярный найм QA."
+    enabled: true
+
+  - name: Сбер (Сбербанк)
+    careers_url: https://www.sberbank.com/ru/career
+    scan_method: websearch
+    scan_query: '"сбер" OR "сбербанк" "тестировщик" OR "QA" junior site:hh.ru OR site:career.habr.com'
+    notes: "Крупнейший банк РФ, огромный IT-блок, много джунов."
+    enabled: true
+
+  - name: Т-Банк (Тинькофф)
+    careers_url: https://www.tbank.ru/career/
+    scan_method: websearch
+    scan_query: 'site:tbank.ru/career OR "тинькофф" "тестировщик" OR "QA" junior'
+    notes: "Лидер необанков. Известна хорошими условиями для джунов."
+    enabled: true
+
+  - name: Авито
+    careers_url: https://avito.tech/vacancies
+    scan_method: websearch
+    scan_query: 'site:avito.tech/vacancies "QA" OR "тестировщик" junior'
+    notes: "Крупнейшая доска объявлений РФ. Сильная QA-культура."
+    enabled: true
+
+  - name: Ozon
+    careers_url: https://job.ozon.ru
+    scan_method: websearch
+    scan_query: 'site:job.ozon.ru "тестировщик" OR "QA" junior OR стажёр'
+    notes: "Маркетплейс, активно растёт. Много QA."
+    enabled: true
+
+  - name: Wildberries
+    careers_url: https://hr.wildberries.ru
+    scan_method: websearch
+    scan_query: '"wildberries" OR "вайлдберриз" "тестировщик" OR "QA" junior site:hh.ru'
+    notes: "Крупнейший маркетплейс РФ. Много IT-вакансий."
+    enabled: true
+
+  - name: Kaspersky
+    careers_url: https://careers.kaspersky.ru
+    scan_method: websearch
+    scan_query: 'site:careers.kaspersky.ru "QA" OR "тестировщик" junior'
+    notes: "Антивирус. Высокие стандарты QA, хорошее обучение."
+    enabled: true
+
+  - name: Ростелеком-Солар / Solar
+    careers_url: https://rt-solar.ru/careers/
+    scan_method: websearch
+    scan_query: '"ростелеком" OR "solar" "тестировщик" OR "QA" junior site:hh.ru'
+    notes: "Кибербезопасность — хорошее место для QA с интересом к security."
+    enabled: true
+
+  - name: МТС
+    careers_url: https://career.mts.ru
+    scan_method: websearch
+    scan_query: 'site:career.mts.ru "тестировщик" OR "QA" junior'
+    notes: "Телеком + IT. МТС Digital активно нанимает."
+    enabled: true
+
+  - name: Ростелеком
+    careers_url: https://rabota.rt.ru
+    scan_method: websearch
+    scan_query: 'site:rabota.rt.ru "тестировщик" OR "QA" junior'
+    notes: "Телеком-инфраструктура РФ. Много IT-позиций."
+    enabled: true
+
+  - name: Альфа-Банк
+    careers_url: https://alfabank.ru/about/career/
+    scan_method: websearch
+    scan_query: '"альфа-банк" "тестировщик" OR "QA" junior site:hh.ru OR site:career.habr.com'
+    notes: "Крупный банк, активная IT-команда."
+    enabled: true
+
+  - name: Газпром Нефть / IT блок
+    careers_url: https://gd.gazprom-neft.ru/career/
+    scan_method: websearch
+    scan_query: '"газпром нефть" OR "GPN" "тестировщик" OR "QA" junior site:hh.ru'
+    notes: "Корпоративный IT, стабильность, SAP (но есть и обычный QA)."
+    enabled: false  # SAP-heavy — пока disabled
+
+  - name: Самокат
+    careers_url: https://samokat.ru/careers
+    scan_method: websearch
+    scan_query: '"самокат" "тестировщик" OR "QA" junior site:hh.ru OR site:career.habr.com'
+    notes: "Быстрая доставка. Активно растёт, нанимает джунов."
+    enabled: true
+
+  - name: СДЭК
+    careers_url: https://job.cdek.ru
+    scan_method: websearch
+    scan_query: 'site:job.cdek.ru "тестировщик" OR "QA"'
+    notes: "Логистика. Есть QA-позиции."
+    enabled: true
+
+  - name: Selectel
+    careers_url: https://selectel.ru/about/jobs/
+    scan_method: websearch
+    scan_query: 'site:selectel.ru "тестировщик" OR "QA" junior'
+    notes: "Облачный провайдер РФ. Известен хорошей культурой для разработчиков."
+    enabled: true
+
+  - name: Контур
+    careers_url: https://kontur.ru/jobs
+    scan_method: websearch
+    scan_query: 'site:kontur.ru/jobs "тестировщик" OR "QA" junior'
+    notes: "Екатеринбург. Б2Б-сервисы (бухгалтерия, ЭДО). Известен QA-культурой."
+    enabled: true
+
+  - name: EPAM Systems
+    careers_url: https://www.epam.com/careers
+    scan_method: websearch
+    scan_query: '"EPAM" "тестировщик" OR "QA" OR "manual testing" junior Russia OR remote site:hh.ru OR site:career.habr.com'
+    notes: "Аутсорс. Много обучения, стажировки. Remote-friendly."
+    enabled: true
+
+  - name: Luxoft
+    careers_url: https://career.luxoft.com
+    scan_method: websearch
+    scan_query: 'site:career.luxoft.com "QA" OR "tester" junior Russia'
+    notes: "DXC-дочка. Аутсорс, много QA-вакансий."
+    enabled: true
+
+  - name: Grid Dynamics
+    careers_url: https://www.griddynamics.com/careers
+    scan_method: websearch
+    scan_query: '"grid dynamics" "QA" OR "tester" junior Russia'
+    notes: "Аутсорс/аутстаф. Иногда берут джунов."
+    enabled: true
+
+  - name: HeadHunter (HH.ru)
+    careers_url: https://hh.ru/employer/1455
+    scan_method: websearch
+    scan_query: '"hh.ru" OR "headhunter" "тестировщик" OR "QA" junior site:career.habr.com'
+    notes: "Сам hh.ru нанимает QA-инженеров."
+    enabled: true

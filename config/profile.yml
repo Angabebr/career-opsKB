@@ -1,0 +1,58 @@
+# Career-Ops Profile — Брычка Кирилл Максимович
+
+candidate:
+  full_name: "Брычка Кирилл Максимович"
+  email: "bryckakirill@gmail.com"
+  phone: "+7 (993) 1006968"
+  location: "Саратов, Россия"
+  github: "github.com/Angabebr"
+  linkedin: ""          # заполнить если есть
+  portfolio_url: ""     # заполнить если появится
+
+target_roles:
+  primary:
+    - "QA Engineer (Junior / Junior+)"
+    - "Тестировщик ПО"
+    - "Manual QA Engineer"
+  archetypes:
+    - name: "Manual QA Engineer"
+      level: "Junior / Junior+"
+      fit: "primary"
+    - name: "QA Engineer с переходом в автоматизацию"
+      level: "Junior+"
+      fit: "primary"
+    - name: "SDET / Automation QA"
+      level: "Junior"
+      fit: "secondary"
+
+narrative:
+  headline: "Начинающий QA-инженер — технический фундамент, системный подход, реальный опыт обучения"
+  exit_story: >
+    Получил среднее специальное образование по ИСП и продолжаю учиться по ИВЧТ.
+    Более года преподаю IT-дисциплины детям — это научило меня системно мыслить
+    и работать с деталями. Знаю инструменты тестирования на практическом уровне,
+    понимаю REST API и SQL. Хочу войти в QA и вырасти в автоматизацию.
+  superpowers:
+    - "Системный подход: умею строить тест-кейсы и чек-листы с нуля"
+    - "Работа с REST API через Postman — ручное тестирование эндпоинтов"
+    - "Педагогический опыт: нахожу ошибки в логике и объясняю их понятно"
+    - "SQL / базы данных: могу проверять данные напрямую в БД"
+    - "Быстро обучаюсь — готов к новым инструментам и процессам"
+  proof_points: []      # заполнить когда появятся проекты / кейсы
+
+compensation:
+  target_range: "70 000 — 90 000 ₽ на руки"
+  currency: "RUB"
+  minimum: "60 000 ₽ на руки"
+  location_flexibility: "Саратов (офис/гибрид) или полная удалёнка"
+
+location:
+  country: "Россия"
+  city: "Саратов"
+  timezone: "MSK (UTC+3)"
+  visa_status: "Гражданин РФ, разрешение на работу РФ"
+  relocation: "paid_only"  # переезд возможен при оплате компанией
+  remote_preferred: true
+
+language:
+  modes_dir: "modes/ru"   # использовать русские режимы по умолчанию
