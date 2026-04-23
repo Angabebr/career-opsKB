@@ -60,54 +60,60 @@ title_filter:
 # Для WebSearch. Каждый запрос — отдельный скан.
 
 search_queries:
-  # --- hh.ru (основной российский job board) ---
-  - name: hh.ru — QA Junior / Тестировщик
-    query: 'site:hh.ru "тестировщик" OR "QA engineer" junior Саратов OR удалённо'
+  # hh.ru НЕ здесь — используется прямой API в modes/ru/scan.md (100+ вакансий)
+
+  # --- Habr Career ---
+  - name: Habr Career — QA Junior удалённо
+    query: 'site:career.habr.com "тестировщик" OR "QA" junior удалённо'
     enabled: true
 
-  - name: hh.ru — Тестировщик удалёнка
-    query: 'site:hh.ru "тестировщик" OR "QA" удалённо OR "удалённая работа" junior OR стажёр'
+  - name: Habr Career — Manual QA
+    query: 'site:career.habr.com "manual QA" OR "ручное тестирование" junior OR "junior+"'
     enabled: true
 
-  - name: hh.ru — Manual QA удалёнка
-    query: 'site:hh.ru "ручное тестирование" OR "manual QA" OR "manual testing" junior удалённо'
-    enabled: true
-
-  - name: hh.ru — API тестирование Junior
-    query: 'site:hh.ru "тестирование API" OR "QA" Postman junior OR начинающий удалённо'
-    enabled: true
-
-  # --- Habr Career (tech-focused) ---
-  - name: Habr Career — QA Junior
-    query: 'site:career.habr.com "тестировщик" OR "QA" junior OR "junior+"'
-    enabled: true
-
-  - name: Habr Career — QA удалёнка
-    query: 'site:career.habr.com "QA engineer" OR "тестировщик" удалённо'
+  - name: Habr Career — Стажёр тестировщик
+    query: 'site:career.habr.com стажёр тестировщик OR "trainee QA"'
     enabled: true
 
   # --- GeekJob ---
   - name: GeekJob — QA Junior
-    query: 'site:geekjob.ru "тестировщик" OR "QA" junior OR стажёр'
+    query: 'site:geekjob.ru тестировщик OR "QA" junior OR стажёр'
+    enabled: true
+
+  - name: GeekJob — QA удалённо
+    query: 'site:geekjob.ru "QA" OR "тестировщик" удалённо junior'
     enabled: true
 
   # --- SuperJob ---
-  - name: SuperJob — Тестировщик
-    query: 'site:superjob.ru "тестировщик" OR "QA engineer" junior Саратов OR удалённо'
+  - name: SuperJob — Тестировщик удалённо
+    query: 'site:superjob.ru тестировщик OR "QA" junior удалённо'
+    enabled: true
+
+  - name: SuperJob — Тестировщик Саратов
+    query: 'site:superjob.ru тестировщик OR "QA" Саратов'
     enabled: true
 
   # --- Rabota.ru ---
-  - name: Rabota.ru — QA Саратов
-    query: 'site:rabota.ru "тестировщик" OR "QA" Саратов'
+  - name: Rabota.ru — QA Саратов и удалённо
+    query: 'site:rabota.ru "тестировщик" OR "QA" Саратов OR удалённо junior'
     enabled: true
 
-  # --- Telegram-каналы и агрегаторы ---
-  - name: Remote OK — QA Russian-friendly
-    query: 'site:remoteok.com "QA" OR "tester" OR "quality assurance" junior'
+  # --- Budu.jobs ---
+  - name: Budu.jobs — QA Junior
+    query: 'site:budu.jobs "тестировщик" OR "QA" junior OR стажёр'
     enabled: true
 
-  - name: Himalayas — QA Junior Remote
-    query: 'site:himalayas.app "QA engineer" OR "software tester" junior remote'
+  # --- Широкий поиск ---
+  - name: Широкий — QA Postman SQL удалённо
+    query: '"тестировщик" OR "QA" junior Postman SQL удалённо -senior -lead -"1С" -"1C"'
+    enabled: true
+
+  - name: Широкий — QA API тестирование 2026
+    query: '"QA engineer" junior "API тестирование" OR Postman удалённо Россия 2026'
+    enabled: true
+
+  - name: Широкий — стажировки QA 2026
+    query: 'стажировка тестировщик OR "QA" 2026 оплачиваемая Россия'
     enabled: true
 
 # -- Компании напрямую --
